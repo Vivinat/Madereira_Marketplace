@@ -3,19 +3,23 @@ const app = express();
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const mongoose = require('mongoose');
+const authJwt = require('./helpers/jwt');
+const errorHandler = require('./helpers/error-handler')
+
 //middleware
 
 require('dotenv/config');
 app.use(bodyParser.json());
 app.use(morgan('tiny'));
-
+app.use(authJwt());
+app.use(errorHandler); 
 //Router
 
 const api = process.env.API_URL;
 const productsRouter = require('./routes/products')
 const ordersRouter = require('./routes/orders')
 const categoriesRouter = require('./routes/categories')
-const usersRouter = require('./routes/users')
+const usersRouter = require('./routes/users');
 
 app.use(`${api}/produtos`, productsRouter)
 app.use(`${api}/pedidos`, ordersRouter)
