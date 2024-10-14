@@ -82,3 +82,6 @@ build/
 
 # Webpack partial files
 *.swp
+
+# VS code
+.prettierrc
