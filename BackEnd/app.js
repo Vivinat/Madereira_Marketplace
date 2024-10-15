@@ -2,7 +2,6 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
-const mongoose = require('mongoose');
 //middleware
 
 require('dotenv/config');
@@ -22,16 +21,4 @@ app.use(`${api}/pedidos`, ordersRouter)
 app.use(`${api}/categorias`, categoriesRouter)
 app.use(`${api}/usuarios`, usersRouter)
 
-
-mongoose.connect(process.env.CONNECTION_STRING)
-.then(()=>{
-    console.log('Database conectada')
-})
-.catch((err)=> {
-    console.log(err);
-})
-
-app.listen(3000,()=>{
-
-    console.log("Servidor iniciou no link http://localhost:3000")
-})
+module.exports = app
