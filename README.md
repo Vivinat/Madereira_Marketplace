@@ -60,6 +60,24 @@ para iniciar o projeto após configurações basta digitar incialmente os seguin
 ```shell
 # Para a primeira vez
 npm install
+```
+
+```shell
 # Para as outras vezes
+npm update
+npm start
+```
+
+### Realização de testes unitários
+
+```shell
+# Para a primeira vez
+npm i env-cmd@8.0.2 --save-dev
+npm test
+```
+
+```shell
+# Para as outras vezes
+npm update
 npm start
 ```
