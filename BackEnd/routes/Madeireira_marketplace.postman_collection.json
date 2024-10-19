@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "ba531130-fceb-4e7a-94ed-bd3ccea59f3b",
+		"_postman_id": "db81d225-8b43-49a4-9962-782f39fb6033",
 		"name": "Madeireira_marketplace",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "29124678"
+		"_exporter_id": "38198499"
 	},
 	"item": [
 		{
@@ -269,8 +269,68 @@
 					"response": []
 				}
 			]
+		},
+		{
+			"name": "autorization",
+			"item": [
+				{
+					"name": "Login usuario admin",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var res = pm.response.json();\r",
+									"if (res.token) {\r",
+									"    pm.collectionVariables.set(\"token\", res.token);\r",
+									"}else{\r",
+									"    pm.collectionVariables.set(\"token\", '');\r",
+									"}"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"email\": \"madeira\",\r\n        \"password\": \"teste3\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/{{api_url}}/usuarios/login",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{api_url}}",
+								"usuarios",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		}
 	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{token}}",
+				"type": "string"
+			}
+		]
+	},
 	"event": [
 		{
 			"listen": "prerequest",
@@ -300,6 +360,11 @@
 		{
 			"key": "api_url",
 			"value": "api/v1",
+			"type": "string"
+		},
+		{
+			"key": "token",
+			"value": "",
 			"type": "string"
 		}
 	]
