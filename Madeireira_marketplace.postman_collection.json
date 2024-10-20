@@ -1,0 +1,664 @@
+{
+	"info": {
+		"_postman_id": "db81d225-8b43-49a4-9962-782f39fb6033",
+		"name": "Madeireira_marketplace",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38198499"
+	},
+	"item": [
+		{
+			"name": "categories",
+			"item": [
+				{
+					"name": "Todos as categorias",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/{{api_url}}/categorias/",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{api_url}}",
+								"categorias",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Categorias por id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/{{api_url}}/categorias/123",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{api_url}}",
+								"categorias",
+								"123"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Adicionar categoria",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"teste\"\r\n}"
+						},
+						"url": {
+							"raw": "{{host}}/{{api_url}}/categorias/",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{api_url}}",
+								"categorias",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Alterar categoria",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"teste\"\r\n}"
+						},
+						"url": {
+							"raw": "{{host}}/{{api_url}}/categorias/123",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{api_url}}",
+								"categorias",
+								"123"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Apagar categorias",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/{{api_url}}/categorias/123",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{api_url}}",
+								"categorias",
+								"123"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "orders",
+			"item": [
+				{
+					"name": "Todas as ordens",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/{{api_url}}/pedidos/",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{api_url}}",
+								"pedidos",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Order por id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/{{api_url}}/pedidos/67153d2a20feb35a42862243",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{api_url}}",
+								"pedidos",
+								"67153d2a20feb35a42862243"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Mudar Status pedido",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"status\": \"shipped\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/{{api_url}}/pedidos/671533aa7da783123b495782",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{api_url}}",
+								"pedidos",
+								"671533aa7da783123b495782"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Apagar pedido",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"status\": \"shipped\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/{{api_url}}/pedidos/6715394cf48bf5da79200bd7",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{api_url}}",
+								"pedidos",
+								"6715394cf48bf5da79200bd7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Adicionar order",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"orderItems\":\r\n    [\r\n        {\r\n            \"quantity\": 1,\r\n            \"product\": \"66f99cef9aff31e151ee1b8c\"\r\n        },\r\n        {\r\n            \"quantity\": 1,\r\n            \"product\": \"67152f8d78ef0ee42acb9ae6\"\r\n        }\r\n    ],\r\n    \"adress\": \"Rua\",\r\n    \"city\": \"Píranguinho\",\r\n    \"cep\": \"37512-000\",\r\n    \"country\": \"Brasil\",\r\n    \"phone\": \"991256\",\r\n    \"totalPrice\": \"1000\",\r\n    \"user\": \"670d2978eb61d3fb1f323325\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/{{api_url}}/pedidos/",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{api_url}}",
+								"pedidos",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obter valor bruto de vendas totais",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"orderItems\":\r\n    [\r\n        {\r\n            \"quantity\": 3,\r\n            \"product\": \"66f98ac3dfec35876355712a\"\r\n        },\r\n        {\r\n            \"quantity\": 10,\r\n            \"product\": \"670d44cb645afb1c05335d3b\"\r\n        }\r\n    ],\r\n    \"adress\": \"Rua\",\r\n    \"city\": \"Píranguinho\",\r\n    \"cep\": \"37512-000\",\r\n    \"country\": \"Brasil\",\r\n    \"phone\": \"991256\",\r\n    \"totalPrice\": \"1000\",\r\n    \"user\": \"670d2978eb61d3fb1f323325\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/{{api_url}}/pedidos/get/vendastotais",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{api_url}}",
+								"pedidos",
+								"get",
+								"vendastotais"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obter  quantidade de pedidos",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"orderItems\":\r\n    [\r\n        {\r\n            \"quantity\": 3,\r\n            \"product\": \"66f98ac3dfec35876355712a\"\r\n        },\r\n        {\r\n            \"quantity\": 10,\r\n            \"product\": \"670d44cb645afb1c05335d3b\"\r\n        }\r\n    ],\r\n    \"adress\": \"Rua\",\r\n    \"city\": \"Píranguinho\",\r\n    \"cep\": \"37512-000\",\r\n    \"country\": \"Brasil\",\r\n    \"phone\": \"991256\",\r\n    \"totalPrice\": \"1000\",\r\n    \"user\": \"670d2978eb61d3fb1f323325\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/{{api_url}}/pedidos/get/count",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{api_url}}",
+								"pedidos",
+								"get",
+								"count"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obter pedidos por Id de usuario",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"orderItems\":\r\n    [\r\n        {\r\n            \"quantity\": 3,\r\n            \"product\": \"66f98ac3dfec35876355712a\"\r\n        },\r\n        {\r\n            \"quantity\": 10,\r\n            \"product\": \"670d44cb645afb1c05335d3b\"\r\n        }\r\n    ],\r\n    \"adress\": \"Rua\",\r\n    \"city\": \"Píranguinho\",\r\n    \"cep\": \"37512-000\",\r\n    \"country\": \"Brasil\",\r\n    \"phone\": \"991256\",\r\n    \"totalPrice\": \"1000\",\r\n    \"user\": \"670d2978eb61d3fb1f323325\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/{{api_url}}/pedidos//get/userorders/670d2978eb61d3fb1f323325",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{api_url}}",
+								"pedidos",
+								"",
+								"get",
+								"userorders",
+								"670d2978eb61d3fb1f323325"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "products",
+			"item": [
+				{
+					"name": "Todos os produtos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/{{api_url}}/produtos/",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{api_url}}",
+								"produtos",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Produto por id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/{{api_url}}/produtos/123",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{api_url}}",
+								"produtos",
+								"123"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obter numero de Produtos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/{{api_url}}/produtos/get/count",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{api_url}}",
+								"produtos",
+								"get",
+								"count"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obter numero de Produtos Featured (Pagina Inicial)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/{{api_url}}/produtos//get/featured/:count",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{api_url}}",
+								"produtos",
+								"",
+								"get",
+								"featured",
+								":count"
+							],
+							"variable": [
+								{
+									"key": "count",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Adicionar produto",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"teste\"\r\n}"
+						},
+						"url": {
+							"raw": "{{host}}/{{api_url}}/produtos/",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{api_url}}",
+								"produtos",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Alterar produto por id",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"teste\"\r\n}"
+						},
+						"url": {
+							"raw": "{{host}}/{{api_url}}/produtos/123",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{api_url}}",
+								"produtos",
+								"123"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Apagar produto por id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/{{api_url}}/produtos/123",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{api_url}}",
+								"produtos",
+								"123"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "Todas os usuários",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/{{api_url}}/usuarios/",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{api_url}}",
+								"usuarios",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obter quantidade de usuarios",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/{{api_url}}/usuarios/get/count",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{api_url}}",
+								"usuarios",
+								"get",
+								"count"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "autorization",
+			"item": [
+				{
+					"name": "Login usuario admin",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var res = pm.response.json();\r",
+									"if (res.token) {\r",
+									"    pm.collectionVariables.set(\"token\", res.token);\r",
+									"}else{\r",
+									"    pm.collectionVariables.set(\"token\", '');\r",
+									"}"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"email\": \"madeira\",\r\n        \"password\": \"teste3\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/{{api_url}}/usuarios/login",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{api_url}}",
+								"usuarios",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{token}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "host",
+			"value": "http://localhost:3000",
+			"type": "string"
+		},
+		{
+			"key": "api_url",
+			"value": "api/v1",
+			"type": "string"
+		},
+		{
+			"key": "token",
+			"value": "",
+			"type": "string"
+		}
+	]
+}
