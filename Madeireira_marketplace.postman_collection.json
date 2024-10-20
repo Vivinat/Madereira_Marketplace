@@ -542,6 +542,63 @@
 					"response": []
 				},
 				{
+					"name": "Obtem usuario por Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/{{api_url}}/usuarios/",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{api_url}}",
+								"usuarios",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Registra Usuario",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/{{api_url}}/usuarios/register",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{api_url}}",
+								"usuarios",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deleta Usuario por Id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/{{api_url}}/usuarios/",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{api_url}}",
+								"usuarios",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "Obter quantidade de usuarios",
 					"request": {
 						"method": "GET",
@@ -564,10 +621,10 @@
 			]
 		},
 		{
-			"name": "autorization",
+			"name": "authorization",
 			"item": [
 				{
-					"name": "Login usuario admin",
+					"name": "Login usuario",
 					"event": [
 						{
 							"listen": "test",
