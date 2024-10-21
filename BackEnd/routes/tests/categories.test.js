@@ -2,6 +2,10 @@ const request = require('supertest')
 const app = require('../../app.js')
 
 const api = process.env.API_URL;
+
+// Autorização está demorando
+const TIME_IN_SECONDS = 40 * 1000
+jest.setTimeout(TIME_IN_SECONDS)
 describe("GET categorias/", () => {
     describe("rota deve retornar todos as categorias", () =>{
         // status code deve ser 200

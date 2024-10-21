@@ -38,27 +38,28 @@ router.get(`/:id`, async (req, res) =>{
 
 
 router.post('/', async (req, res)=>{
-    const orderItemsIds = Promise.all(req.body.orderItems.map(async orderItem => {
-        let newOrderItem = new OrderItem({
-            quantity: orderItem.quantity,
-            product: orderItem.product
-        })
-
-        newOrderItem = await newOrderItem.save();
-
-        return newOrderItem._id;
-    }))
-    const orderItemsIdsResolved = await orderItemsIds;
-
-    const totalPrices = await Promise.all(orderItemsIdsResolved.map(async (orderItemId) =>{
-        const orderItem = await OrderItem.findById(orderItemId).populate('product', 'price')
-        const totalPrice = orderItem.product.price * orderItem.quantity;
-        return totalPrice;
-    }))
-
-    const totalPrice = totalPrices.reduce((a, b) => a + b, 0); // Somando todos os preços
-
     try {
+        const orderItemsIds = Promise.all(req.body.orderItems.map(async orderItem => {
+            let newOrderItem = new OrderItem({
+                quantity: orderItem.quantity,
+                product: orderItem.product
+            })
+
+            newOrderItem = await newOrderItem.save();
+
+            return newOrderItem._id;
+        }))
+        const orderItemsIdsResolved = await orderItemsIds;
+
+        const totalPrices = await Promise.all(orderItemsIdsResolved.map(async (orderItemId) =>{
+            const orderItem = await OrderItem.findById(orderItemId).populate('product', 'price')
+            const totalPrice = orderItem.product.price * orderItem.quantity;
+            return totalPrice;
+        }))
+
+        const totalPrice = totalPrices.reduce((a, b) => a + b, 0); // Somando todos os preços
+
+        
         let order = new Order({
             orderItems: orderItemsIdsResolved,
             adress: req.body.adress,
@@ -120,15 +121,19 @@ router.delete('/:id', (req, res) =>{
 })
 
 router.get('/get/vendastotais', async (req, res) =>{
-    const totalSales = await Order.aggregate([
-        { $group: { _id:null, totalsales: { $sum: '$totalPrice'}}}
-    ])
-
-    if (!totalSales){
-        res.status(400).send('Pedidos nao foram carregados');
+    try {
+        const totalSales = await Order.aggregate([
+            { $group: { _id:null, totalsales: { $sum: '$totalPrice'}}}
+        ])
+    
+        if (!totalSales){
+            res.status(400).send('Pedidos nao foram carregados');
+        }
+    
+        res.send({totalsales: totalSales.pop().totalsales}) 
+    } catch (error) {
+        return res.status(404).send(error.message)
     }
-
-    res.send({totalsales: totalSales.pop().totalsales}) 
 })
 
 router.get(`/get/count`, async (req, res) =>{
