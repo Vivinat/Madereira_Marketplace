@@ -5,6 +5,12 @@ const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const authJwt = require('./helpers/jwt');
 const errorHandler = require('./helpers/error-handler')
+const cors = require('cors');
+
+app.use(cors()); // Isso permitirá todas as origens. Para restringir, veja o exemplo abaixo.
+
+// As demais configurações e rotas do seu servidor
+
 
 //middleware
 
