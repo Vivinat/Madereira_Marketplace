@@ -1,0 +1,371 @@
+{
+	"info": {
+		"_postman_id": "db81d225-8b43-49a4-9962-782f39fb6033",
+		"name": "Madeireira_marketplace",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38198499"
+	},
+	"item": [
+		{
+			"name": "categories",
+			"item": [
+				{
+					"name": "Todos as categorias",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/{{api_url}}/categorias/",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{api_url}}",
+								"categorias",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Categorias por id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/{{api_url}}/categorias/123",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{api_url}}",
+								"categorias",
+								"123"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Adicionar categoria",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"teste\"\r\n}"
+						},
+						"url": {
+							"raw": "{{host}}/{{api_url}}/categorias/",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{api_url}}",
+								"categorias",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Alterar categoria",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"teste\"\r\n}"
+						},
+						"url": {
+							"raw": "{{host}}/{{api_url}}/categorias/123",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{api_url}}",
+								"categorias",
+								"123"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Apagar categorias",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/{{api_url}}/categorias/123",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{api_url}}",
+								"categorias",
+								"123"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "orders",
+			"item": [
+				{
+					"name": "Todas as ordens",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/{{api_url}}/pedidos/",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{api_url}}",
+								"pedidos",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "products",
+			"item": [
+				{
+					"name": "Todos os produtos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/{{api_url}}/produtos/",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{api_url}}",
+								"produtos",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Produto por id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/{{api_url}}/produtos/123",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{api_url}}",
+								"produtos",
+								"123"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Adicionar produto",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"teste\"\r\n}"
+						},
+						"url": {
+							"raw": "{{host}}/{{api_url}}/produtos/",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{api_url}}",
+								"produtos",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Alterar produto por id",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"teste\"\r\n}"
+						},
+						"url": {
+							"raw": "{{host}}/{{api_url}}/produtos/123",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{api_url}}",
+								"produtos",
+								"123"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Apagar produto por id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/{{api_url}}/produtos/123",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{api_url}}",
+								"produtos",
+								"123"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "Todas os usuários",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/{{api_url}}/usuarios/",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{api_url}}",
+								"usuarios",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "autorization",
+			"item": [
+				{
+					"name": "Login usuario admin",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var res = pm.response.json();\r",
+									"if (res.token) {\r",
+									"    pm.collectionVariables.set(\"token\", res.token);\r",
+									"}else{\r",
+									"    pm.collectionVariables.set(\"token\", '');\r",
+									"}"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"email\": \"madeira\",\r\n        \"password\": \"teste3\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/{{api_url}}/usuarios/login",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{api_url}}",
+								"usuarios",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{token}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "host",
+			"value": "http://localhost:3000",
+			"type": "string"
+		},
+		{
+			"key": "api_url",
+			"value": "api/v1",
+			"type": "string"
+		},
+		{
+			"key": "token",
+			"value": "",
+			"type": "string"
+		}
+	]
+}
