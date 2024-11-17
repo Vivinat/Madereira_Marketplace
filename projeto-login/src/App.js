@@ -19,33 +19,34 @@ function App() {
         {/* Adiciona padding para evitar sobreposição com a navbar fixa */}
         <div style={{ paddingTop: '64px' }}>
           <Routes>
-            <Route path="/" element={<LoginPage />} />
+            <Route path="/" element={<HomePage />} />
 
             {/* Rota protegida para a página de produtos */}
             <Route
               path="/produtos/get/featured/:count"
               element={
-                <ProtectedRoute>
                   <HomePage />
-                </ProtectedRoute>
               }
             />
 
             <Route
               path="/produtos"
               element={
-                <ProtectedRoute>
                   <AllProducts />
-                </ProtectedRoute>
               }
             />
 
-              <Route
+            <Route
               path="/usuarios/register"
               element={
-                <ProtectedRoute>
-                  <UserRegistration />
-                </ProtectedRoute>
+                <UserRegistration />
+              }
+            />
+
+            <Route
+              path="/login"
+              element={
+                <LoginPage />
               }
             />
 

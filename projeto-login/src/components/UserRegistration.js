@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { TextField, Button, Box, Typography } from '@mui/material';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom'; // Importa o useNavigate
+import { Link } from 'react-router-dom';
 
 function UserRegistration() {
   const [userData, setUserData] = useState({
@@ -132,6 +133,10 @@ function UserRegistration() {
         /> */}
         <Button variant="contained" color="primary" type="submit" style={{ marginTop: 16 }}>
           Cadastrar
+        </Button>
+
+        <Button color="inherit" component={Link} to="/login" style={{ color: 'blue' }}>
+          Já possui conta? Entre já
         </Button>
       </form>
     </Box>

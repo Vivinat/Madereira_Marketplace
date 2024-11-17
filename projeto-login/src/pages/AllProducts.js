@@ -59,8 +59,8 @@ function AllProducts() {
                   <Typography gutterBottom variant="h5" component="div">
                     {product.name}
                   </Typography>
-                  <Typography variant="body2" color="text.secondary">
-                    {product.description || product.richDescription}
+                  <Typography variant="body2" color="text.secondary" noWrap>
+                    {product.description || product.richDescription || "Missing description"}
                   </Typography>
                   <Typography variant="h6" color="primary">
                     R$ {product.price}
