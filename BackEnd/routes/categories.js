@@ -40,7 +40,7 @@ router.put('/:id', async(req, res)=> {
 router.get('/:id', async(req, res) => {
     try {
         const category = await Category.findById(req.params.id);
-        if (!categoriesList){
+        if (!category){
             res.status(500).json({success:false, message: 'Categoria com Id informado não-encontrada'})
         }
 
