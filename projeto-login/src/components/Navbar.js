@@ -24,7 +24,7 @@ function Navbar() {
           Mais Vendidos
         </Button>
         <Button color="inherit" component={Link} to="/usuarios/register" style={{ color: 'white' }}>
-          Registrar Usuários
+          Registrar-se
         </Button>
         
       </Toolbar>
