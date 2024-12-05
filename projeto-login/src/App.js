@@ -9,6 +9,12 @@ import ProtectedRoute from './components/ProtectedRoute';
 import { AuthProvider } from './contexts/AuthContext';
 import AllProducts from './pages/AllProducts';
 import UserRegistration from './components/UserRegistration'; // Importa o componente
+import Orders from './pages/Orders';
+import CartPage from './pages/confirmationorder';
+import OrdersListPage from './pages/OrdersListPage';
+import OrdersPage from './pages/Orders';
+
+
 
 function App() {
   return (
@@ -49,6 +55,23 @@ function App() {
                 <LoginPage />
               }
             />
+
+        <Route
+         path="/pedidos" 
+         element={<Orders />
+         }
+          />
+
+        <Route 
+        path="/pedidos"
+         element={<CartPage 
+         />} 
+         />
+
+<Route path="/pedido/:orderId" element={<OrdersListPage />} /> {/* Página de detalhes do pedido */}
+
+<Route path="/pedidos" element={<OrdersListPage />} /> {/* Página de pedidos */}
+        <Route path="/pedido/:orderId" element={<OrdersPage />} /> {/* Página de detalhes do pedido */}
 
 
           </Routes>
